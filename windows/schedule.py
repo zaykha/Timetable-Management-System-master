@@ -479,7 +479,65 @@ def generate_pdf(selected_data, file_path):
     combined_tables = [table, table_session]
     # Build the PDF document with both tables
     doc.build(combined_tables)
-   
+
+
+# def generate_pdf(selected_data, file_path):
+#     # Define the PDF content as an empty string
+#     pdf_content = ""
+    
+#     # Define the header for the first table
+#     header1 = "Module|Lecturer|Module Schedule|Remark"
+    
+#     # Define the data for the first table
+#     data1 = []
+    
+#     # Iterate through the Treeview data and add it to the data list for the first table
+#     for i, data_row in enumerate(selected_data, start=1):
+#         name = data_row[1]
+#         description = data_row[2]
+#         module = name.split('_')
+#         module_desc = description.replace("SET", "").strip()
+#         result_module = None
+
+#         if len(module) == 5:
+#             result_module = module[3]
+#             module_schedule = module[4]
+
+#         final_module = result_module + " " + module_desc
+#         final_module_schedule = module_schedule
+#         row_to_append = [final_module, data_row[10], final_module_schedule, data_row[8]]
+#         data1.append("|".join(row_to_append))
+
+#     # Define the header for the second table
+#     header2 = "Week|Monday|Tuesday|Wednesday|Thursday|Friday"
+    
+#     # Define the data for the second table
+#     data2 = []
+
+#     # Iterate through the data and add it to the data list for the second table
+#     weeks = ["", "Week1", "Week2", "Week3", "Week4", "Week5", "Week6", "Week7", "Week8", "Week9", "Week10"]
+#     for week in weeks:
+#         data2.append(week + "|")
+
+#     # Combine the header and data for the first table
+#     table1_content = header1 + "\n" + "\n".join(data1) + "\n"
+
+#     # Combine the header and data for the second table
+#     table2_content = header2 + "\n" + "\n".join(data2) + "\n"
+
+#     # Combine the two tables
+#     combined_tables_content = table1_content + table2_content
+
+#     # Construct the full PDF content
+#     pdf_content = pdf_content + combined_tables_content
+
+#     # Write the PDF content to a file
+#     with open(file_path, 'w') as pdf_file:
+#         pdf_file.write(pdf_content)
+
+# # Example usage:
+# # generate_pdf(selected_data, "output.pdf")
+
 def validate_date_input(input_text):
     # This function is used to validate date input format (dd/mm/yyyy).
     parts = input_text.split("/")

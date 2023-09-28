@@ -9,8 +9,6 @@ from tkinter import filedialog
 import pandas as pd
 from tkinter import messagebox
 import random
-import xlsxwriter
-import xlrd
 import os
 import csv
 from datetime import datetime
@@ -21,7 +19,6 @@ from operator import itemgetter
 from tkinter import font
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
-import openpyxl
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
